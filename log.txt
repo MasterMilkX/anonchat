@@ -1,46 +1,14 @@
--------------Alpha-------------
-User > 	Hey
-Alpha > 	Ok?
-User > 	bye
--------------Alpha-------------
-User     > Hey
-Alpha >  Yeah Maybe Whatever Ok!
-User     > bye
--------------Alpha-------------
-User     > Hey
-Alpha >  maybe.
-User     > How are you?
-Alpha >  I guess...
-User     > ok
-Alpha >  cool...
-User     > bye
--------------Alpha-------------
+-------------Default-------------
 User     > Hi
-Alpha   > ok...
+Default  > ....
 User     > bye
 -------------Alpha-------------
-User     > Hi
-Alpha    > cool?
-User     > no not really...
-Alpha    > meh!
-User     > I suppose you're right
-Alpha    > ok!
-User     > thanks dud
+User     > Hi Alpha
+Alpha    > whatever!
+User     > ok then...
+Alpha    > whatever?
+User     > lol
 Alpha    > meh?
-User     > yeah
-Alpha    > cool...
-User     > bye
--------------Alpha-------------
-User     > Hi
-Alpha    > ok!
-User     > sorta
-Alpha    > whatever.
-User     > true
-Alpha    > maybe?
-User     > no probably not likely
-Alpha    > maybe.
-User     > ok fine i guess
-Alpha    > sure...
-User     > cool
-Alpha    > ok.
+User     > lol
+Alpha    > whatever...
 User     > bye

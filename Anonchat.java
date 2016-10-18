@@ -1,7 +1,7 @@
 /* 
  *	A generic chatbot - based on Pikachat
  *	Program by Milk
- *	Version 1.4
+ *	Version 2.0
 */ 
 
 import java.util.Scanner;
@@ -33,7 +33,7 @@ public class Anonchat{
 	   		bw = new BufferedWriter(fw);
 
 	   		//get the anon user
-	   		anonUser = aUser;
+	   		anonUser = ((aUser != null) ? aUser : "Default");
 	   		importProfile(anonUser);
 
 	   		//make the output string
@@ -54,7 +54,10 @@ public class Anonchat{
 
 	public static void main(String[] args){
 		//setup the convo
-		startUp(args[0]);
+		if(args.length > 0)
+			startUp(args[0]);
+		else
+			startUp(null);
 		Scanner in = new Scanner(System.in);
 		System.out.println("\u001B[31m" + "Say hi to " + anonUser +"... [type Bye to finish]" + "\u001B[0m");
 		exportConvo("-------------" + anonUser + "-------------");
@@ -81,7 +84,7 @@ public class Anonchat{
 		try{bw.close();}catch(IOException e){e.printStackTrace();}
 	}
 
-	//decide for pikachu what to say
+	//decide for anon what to say
 	public static String chat(){
 		if(anonPhrases != null){
 			int randomNum = (int)(Math.random() * anonPhrases.length); 
@@ -95,7 +98,7 @@ public class Anonchat{
 	public static void importProfile(String profile){
 		File anonTxt = new File(profile + ".txt");
 		if(!anonTxt.exists())
-			throw new IllegalArgumentException("ERROR: No such user!");
+			throw new IllegalArgumentException("ERROR: No such user - " + profile + ".txt!");
 
 		try{
 			Scanner newAnon = new Scanner(anonTxt);				//read the text file
