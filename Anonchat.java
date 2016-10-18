@@ -1,7 +1,7 @@
 /* 
  *	A generic chatbot - based on Pikachat
  *	Program by Milk
- *	Version 1.0
+ *	Version 1.4
 */ 
 
 import java.util.Scanner;
@@ -19,6 +19,7 @@ public class Anonchat{
 	public static BufferedWriter bw;
 	public static String anonUser;
 	public static String[] anonPhrases;
+	public static String anonOut = "";
 	public static String color;
 
 	//make the output file
@@ -34,6 +35,14 @@ public class Anonchat{
 	   		//get the anon user
 	   		anonUser = aUser;
 	   		importProfile(anonUser);
+
+	   		//make the output string
+	   		anonOut += anonUser;
+	   		for(int a = 0; a < (8 - anonUser.length()); a++){
+	   			anonOut += " ";
+	   		}
+	   		anonOut += " > ";
+
 		}catch(IOException e){
 			e.printStackTrace();
 		}
@@ -48,30 +57,26 @@ public class Anonchat{
 		startUp(args[0]);
 		Scanner in = new Scanner(System.in);
 		System.out.println("\u001B[31m" + "Say hi to " + anonUser +"... [type Bye to finish]" + "\u001B[0m");
-		exportConvo("-------------" + anonUser +"-------------");
+		exportConvo("-------------" + anonUser + "-------------");
 
 		//first line
-		System.out.print("User >     ");
+		System.out.print("User     > ");
 		String user = in.nextLine();
-		exportConvo("User >     " + user);
+		exportConvo("User     > " + user);
 
 		//while conversation is still going
 		while(!user.toUpperCase().equals("BYE")){
 			//get pikachu's response
 			int randomTimes = 1 + (int)(Math.random() * 4);
-			String yo = "";
-			for(int a = 0; a < randomTimes;a++){
-				yo += Anonchat.chat() + " ";
-			}
-			yo = yo.trim();
+			String yo = Anonchat.chat();
 			String punc = newPunctuation(user);
-			System.out.println("\u001B[33m" + anonUser + " >  " + yo + punc + "\u001B[0m");
-			exportConvo(anonUser + " >  " + yo + punc);
+			System.out.println("\u001B[36m" + anonOut + yo + punc + "\u001B[0m");
+			exportConvo(anonOut + yo + punc);
 
 			//get user's input
-			System.out.print("User >     ");
+			System.out.print("User     > ");
 			user = in.nextLine();
-			exportConvo("User >     " + user);
+			exportConvo("User     > " + user);
 		}
 		try{bw.close();}catch(IOException e){e.printStackTrace();}
 	}
