@@ -1,7 +1,7 @@
 /* 
  *	A generic chatbot - based on Pikachat
  *	Program by Milk
- *	Version 2.0
+ *	Version 3.0
 */ 
 
 import java.util.Scanner;
@@ -19,6 +19,7 @@ public class Anonchat{
 	public static BufferedWriter bw;
 	public static String anonUser;
 	public static String[] anonPhrases;
+	public static String[] anonConfig;
 	public static String anonOut = "";
 	public static String color;
 
@@ -69,11 +70,26 @@ public class Anonchat{
 
 		//while conversation is still going
 		while(!user.toUpperCase().equals("BYE")){
-			//get pikachu's response
-			int randomTimes = 1 + (int)(Math.random() * 4);
-			String yo = Anonchat.chat();
+			//randomize the number of output phrases 
+			int randomTimes;
+			if(anonConfig.length > 1)
+				randomTimes = 1 + (int)(Math.random() * Integer.parseInt(anonConfig[1]));
+			else
+				randomTimes = 1;
+
+			//get anon's response
+			String yo = "";
+			for(int a = 0; a < randomTimes;a++){
+				int randomNum = 1 + (int)(Math.random() * 5); 
+				yo += Anonchat.chat() + " ";
+			}
+			yo = yo.trim();
+
+			//print it out
 			String punc = newPunctuation(user);
-			System.out.println("\u001B[36m" + anonOut + yo + punc + "\u001B[0m");
+			String anonColor;
+			anonColor = (anonConfig.length > 0 ? getColor(anonConfig[0]) : "\u001B[37m");
+			System.out.println(anonColor + anonOut + yo + punc + "\u001B[0m");
 			exportConvo(anonOut + yo + punc);
 
 			//get user's input
@@ -103,7 +119,13 @@ public class Anonchat{
 		try{
 			Scanner newAnon = new Scanner(anonTxt);				//read the text file
 			String line = newAnon.nextLine();					//get the first and only line
-			anonPhrases = line.split(" : ");
+			anonPhrases = line.split(" : ");					//set the phrases
+			if(newAnon.hasNextLine()){							//look for config 
+				String config = newAnon.nextLine();					//get the configuation setup
+				anonConfig = config.split(" : ");						//set the anonConfig
+			}else
+				anonConfig = new String[0];
+							
 			newAnon.close();
 		}catch(IOException e){
 			e.printStackTrace();
@@ -131,5 +153,10 @@ public class Anonchat{
 		}catch(IOException e){
 			e.printStackTrace();
 		}
+	}
+
+	//set the ascii color based on the text 
+	public static String getColor(String colorTxt){
+		return Colors.getColor(colorTxt.trim());
 	}
 }	

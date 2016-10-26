@@ -12,3 +12,75 @@ Alpha    > meh?
 User     > lol
 Alpha    > whatever...
 User     > bye
+-------------Default-------------
+User     > Hi
+Default  > !?
+User     > yeah?
+Default  > ......
+User     > ok
+Default  > ?.
+User     > bye
+-------------Deadpool-------------
+User     > hi
+Deadpool > AGH!
+User     > what's wrong?
+Deadpool > Yeah.
+User     > ok
+Deadpool > Nope?
+User     > sure
+Deadpool > C'mon.
+User     > bye
+-------------Deadpool-------------
+User     > hi
+Deadpool > Yep!
+User     > bye
+-------------Deadpool-------------
+User     > hi
+Deadpool > Yep!
+User     > bye
+-------------Deadpool-------------
+User     > hi
+Deadpool > AGH...
+User     > hy
+Deadpool > WOOOOO!
+User     > bye
+-------------Deadpool-------------
+User     > hi
+Deadpool > Yeah!
+User     > j
+Deadpool > Hooboy...
+User     > bye
+-------------Deadpool-------------
+User     > jk
+Deadpool > Yep...
+User     > bye
+-------------Deadpool-------------
+User     > hi
+Deadpool > WOOOOO?
+User     > bye
+-------------Deadpool-------------
+User     > hi
+Deadpool > C'mon!
+User     > bye
+-------------Deadpool-------------
+User     > hi
+Deadpool > Uh...
+User     > bye
+-------------Deadpool-------------
+User     > j'
+Deadpool > Uh huh!
+User     > oh hey
+Deadpool > Uh!
+User     > you work!
+Deadpool > Yeah...
+User     > coolio
+Deadpool > C'mon?
+User     > sorry
+Deadpool > Yep...
+User     > bye
+-------------Default-------------
+User     > hi
+Default  > ....
+User     > ls
+Default  > ....
+User     > bye
