@@ -34,9 +34,6 @@ java Anonchat [insert chatbot name here]
 
 ```
 here : are : some : set : of phrases
-```
-
-```
 chat color : max number of phrase combinations
 ``` 
 
