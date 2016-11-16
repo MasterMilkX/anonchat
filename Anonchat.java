@@ -1,7 +1,7 @@
 /* 
  *	A generic chatbot - based on Pikachat
  *	Program by Milk
- *	Version 3.0
+ *	Version 3.1
 */ 
 
 import java.util.Scanner;
@@ -60,7 +60,7 @@ public class Anonchat{
 		else
 			startUp(null);
 		Scanner in = new Scanner(System.in);
-		System.out.println("\u001B[31m" + "Say hi to " + anonUser +"... [type Bye to finish]" + "\u001B[0m");
+		System.out.println("\u001B[31m" + "Say hi to " + anonUser +" [type Bye to finish]" + "\u001B[0m");
 		exportConvo("-------------" + anonUser + "-------------");
 
 		//first line

@@ -84,3 +84,21 @@ Default  > ....
 User     > ls
 Default  > ....
 User     > bye
+-------------Deadpool-------------
+User     > Hi Deadpool
+Deadpool > Uh huh.
+User     > what's up?
+Deadpool > Yep?
+User     > is that it?
+Deadpool > Pssh...
+User     > that's not very descriptive
+Deadpool > Hooboy.
+User     > yeah ok then
+Deadpool > Pool!
+User     > pool?
+Deadpool > AGH.
+User     > o.o
+Deadpool > Shit?
+User     > sure
+Deadpool > Pssh...
+User     > bye
